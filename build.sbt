@@ -1,10 +1,11 @@
-name := """PlayApp"""
-organization := "com.playapp"
+name := "PlayApp"
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
+libraryDependencies ++= Seq(
+  javaJdbc,
+  javaEbean,
+  cache
+)
 
-scalaVersion := "2.13.7"
-
-libraryDependencies += guice
+play.Project.playJavaSettings
