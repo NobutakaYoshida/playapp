@@ -27,8 +27,8 @@ public class ApplicationTest {
 
     @Test
     public void renderTemplate() {
-        Content html = views.html.index.render("Your new application is ready.");
+        Content html = views.html.index.render("何か書いて。", new play.data.Form(controllers.Application.SampleForm.class));
         assertThat(contentType(html)).isEqualTo("text/html");
-        assertThaat(contentAsString(html)).contains("Your new application is ready.");
+        assertThaat(contentAsString(html)).contains("何か書いて。");
     }
 }
